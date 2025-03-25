@@ -2,7 +2,7 @@ Aula 1
 
 Instalação de ferramentas:
 
-vitejs.dev
+vite.dev
 
 1-
 npm create vite@latest .
@@ -16,6 +16,7 @@ npm install
 nm run dev
 
 IMPORTANTE ESTAR NO DIRETÓRIO REACT-COM-TS
+A pasta deve estar vazia.
 
 package.json : Informações do projeto e dependências
 
