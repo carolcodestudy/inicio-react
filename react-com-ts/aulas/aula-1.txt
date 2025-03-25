@@ -1,0 +1,23 @@
+Aula 1
+
+Instalação de ferramentas:
+
+vitejs.dev
+
+1-
+npm create vite@latest .
+2-
+Seleciona React
+3- 
+Seleciona Typescript
+4-
+npm install
+5-
+nm run dev
+
+IMPORTANTE ESTAR NO DIRETÓRIO REACT-COM-TS
+
+package.json : Informações do projeto e dependências
+
+index.html serve como uma raiz para a estrutura da página.
+Primeiro o navegador executa esse arquivo, devpois reneriza no arquivo main.tsx onde contém as importações e componentes. Esse arquivo fica na pasta assets que está dentro de src.

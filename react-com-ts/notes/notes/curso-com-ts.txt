@@ -1,0 +1,18 @@
+Curso UDEMY
+
+Comecei 25/03/25 - curso já pago
+
+
+Explicação de React
+
+Reutilização de componentes
+
+react.dev -> Site oficial
+
+Renderização
+
+nodejs.org -> Site oficial do node (obrigatório)
+
+code.visualstudio.com -> Site oficial editor
+
+Extensões: color highlight, css modules, material icon theme.
