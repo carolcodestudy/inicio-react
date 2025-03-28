@@ -21,4 +21,4 @@ A pasta deve estar vazia.
 package.json : Informações do projeto e dependências
 
 index.html serve como uma raiz para a estrutura da página.
-Primeiro o navegador executa esse arquivo, devpois reneriza no arquivo main.tsx onde contém as importações e componentes. Esse arquivo fica na pasta assets que está dentro de src.
+Primeiro o navegador executa esse arquivo, devpois renderiza no arquivo main.tsx onde contém as importações e componentes. Esse arquivo está dentro de src.

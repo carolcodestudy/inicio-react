@@ -1,0 +1,24 @@
+Componentes
+
+Partes de script: header, footer...
+
+O estilo global está localizado em src/index.css 
+Todo o código tem que ficar nesse diretório.
+
+Pode por propriedades dentro das tags. Cria interface para pegar o valor e passar dentro das tags como propriedade. Isso serve para que o script entenda que eu estou esperando um retorno daquela função como nome ou idade
+
+Escrever função com letra maiuscula. Não precisa escreverr a função em ordem.
+
+/*Função pode ser criada em baixo do trecho onde sua call é ralizada ex.:
+const App = ()=>{
+return(
+ <Student/>
+  )
+}
+export default App
+function Student(){
+  return(
+    <h2>Ana Carolina</h2>
+  )
+}
+*/

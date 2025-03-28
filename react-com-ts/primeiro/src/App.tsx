@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//Componente principal
+const App = ()=>{
+  //JSX é o que retornanmos para o HTML
+  return(
+    <div>
+      <h1>My project</h1>
+      <Student name = "Ana Carolina" age={24}/>
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Student name = "Josemar" age={43}/>
+    </div>
   )
 }
 
 export default App
+
+//Criar interface para por um valor nas propriedades isso é necessário para que o ts entenda o que quero
+interface MyName{
+  name : string
+  age : number
+}
+
+function Student({ name, age } : MyName){
+  return(
+    <h2>Nome: {name} <br/> Idade: {age}</h2>
+  )
+}
