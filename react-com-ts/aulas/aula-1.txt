@@ -1,5 +1,7 @@
 Aula 1
 
+25/03/25
+
 Instalação de ferramentas:
 
 vite.dev

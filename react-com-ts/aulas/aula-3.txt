@@ -1,0 +1,46 @@
+Aula 3
+
+28/03/25
+
+useStates
+
+Funções dentro das tags
+
+Cria a função dos eventos fora de return da função principal exportada. E depois chama entre chaves dentro dos componentes(tags).
+
+O useState trabalha com os estados, como uma variável começa e como ela se transfoma.
+No caso ao usar isso tem que importar e por dentro da função exportada: const [valor_incial,valor_atualizado] = useState("")
+
+O valor_incial quer acessar o que está dentro de useState("")
+
+Para chamar isso na função do evento, passa a variáveel normalmente. E também pode passar dentro dos componentes com chaves.
+
+Para fazer uma função em um input, nao precisa criar uma nova função para capturar o evento, coloca um parametro como:
+
+onChange = {(e) => valor_atualizado(e.target.value)}
+Tenta entender que o setInput seria como uma ação para salvar as alteerações e repassar ao valor_inicial. Como uma atualização.
+
+Assim funciona, porém o editor não adicona as propriedades target e value:
+
+  function changedName (e : any){
+    setInput(e.target.value)
+  }
+onChange={changedName} 
+
+Tipagem:
+
+const [age, setAge] = useState<string | number>("")
+Aceita: setFunction("forced") ou setFunction(09)
+
+Para criar um objeto passa a interface e chama assim: const [user , setUser] = userState<interface>()
+A interface serve para por a tipagem dos dados como objeto.
+
+Contador
+const [counter , setCounter] = useState<number>(0)
+  const Add = () =>{
+    setCounter(counter + 1)
+    /*O instrutor fez dessa forma
+    setCounter(val_init => val_init + 1)*/
+  }
+Variavel onde armazena o número entre tags: {counter}
+

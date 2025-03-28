@@ -1,26 +1,39 @@
+import { useState } from 'react'
 //Componente principal
 const App = ()=>{
+
+  interface DateUser{
+    userName : string,
+    userRol : string
+  }
+
+  const [user, setUser] = useState<DateUser>({
+    userName : "visitante!",
+    userRol : ""
+  })
+
+  function handleLogin(){
+    setUser({
+      userName : "Carol",
+      userRol : "TI"
+    })
+  }
+  function handleLogout(){
+    setUser({
+      userName : "visitante!",
+      userRol : ""
+    })
+  }
+
   //JSX é o que retornanmos para o HTML
   return(
     <div>
-      <h1>My project</h1>
-      <Student name = "Ana Carolina" age={24}/>
-
-      <Student name = "Josemar" age={43}/>
+              <h1>Olá {user?.userName}</h1>
+              <h2>{user?.userRol}</h2>
+        <button onClick={handleLogin}>Entrar</button>
+        <br /> <br />
+        <button onClick={handleLogout}>Sair</button>
     </div>
   )
 }
-
 export default App
-
-//Criar interface para por um valor nas propriedades isso é necessário para que o ts entenda o que quero
-interface MyName{
-  name : string
-  age : number
-}
-
-function Student({ name, age } : MyName){
-  return(
-    <h2>Nome: {name} <br/> Idade: {age}</h2>
-  )
-}

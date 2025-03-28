@@ -1,0 +1,4 @@
+Não consegui atribuir uma variável para receber uma função quando criei um componente.
+Ficou acusando que não tinha exportado o membro, porém eu havia exportado!
+Quando coloquei export fuction e escrevi o script dentro funcionou na importação para o App.tsx
+

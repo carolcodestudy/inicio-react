@@ -1,3 +1,7 @@
+Aula 2
+
+27-28/03/25
+
 Componentes
 
 Partes de script: header, footer...
@@ -22,3 +26,20 @@ function Student(){
   )
 }
 */
+
+Todo componente recebe como extensão tsx
+
+Fiz o componente direto com função e exportei sem usar o default
+
+Para chamar o estilo se chama na página do componente criado.
+
+Criar propridade opcional utiliza ?:
+exemplo dentro de interface: key?: tipo_de_valor
+Isso é para que o react não fique gerando erros qunado utilizamos props (O que entra na interface, aquilo que o ts deve saber que nós estamos esperando).
+Também pode deixar um valor padrão dentro da função exportada dentro do parâmetro. Para que o elemento não fique vazio.
+Exempo export function NomedaFuncao( { key = "Texto padrao"  : interface} ){
+  return(
+    <p>{key}</p>
+  )
+}
+E caso eu não utilize o atributo opicional(?:) e por o texto padrao diretamente como parametro na função exportada o erro ocorre do mesmo jeito.
