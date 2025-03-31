@@ -6,6 +6,8 @@ Instalação de ferramentas:
 
 vite.dev
 
+npm create vite@latest mome_arquivo
+
 1-
 npm create vite@latest .
 2-
@@ -13,11 +15,11 @@ Seleciona React
 3- 
 Seleciona Typescript
 4-
-npm install
+Entra no diretório do projeto
 5-
-nm run dev
+npm install
 
-IMPORTANTE ESTAR NO DIRETÓRIO REACT-COM-TS
+IMPORTANTE ESTAR NO DIRETÓRIO RAIZ REACT-COM-TS
 A pasta deve estar vazia.
 
 package.json : Informações do projeto e dependências

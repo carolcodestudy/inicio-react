@@ -1,0 +1,9 @@
+@charset "UTF-08";
+
+*{
+  margin: 0 auto; padding: 0px; box-sizing: border-box; font-family: sans-serif; cursor: context-menu;
+}
+
+body{
+  width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #22272e
+}
