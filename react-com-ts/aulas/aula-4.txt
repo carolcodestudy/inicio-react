@@ -8,6 +8,6 @@ Tem que importar as ações do form ou eventos por causa do ts, no 'react'
 
 <!--Condicional renderizada e afirmativa &&-->
 Se existir o valor vai verificar se os campos não estão vazios e depois vai executar o que deve aparecer.
-            {var_icial && Object.keys(var_icial).length > 0 &&(
-                Ação da condicional. Criação de um bloco if
-            )}
+{var_icial && Object.keys(var_icial).length > 0 &&(
+    Ação da condicional. Criação de um bloco if
+)}

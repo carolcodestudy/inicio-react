@@ -181,3 +181,45 @@ const App = ()=>{
 }
 export default App
 //Precisa colocar o input e o setInput, pois nada adiantará. O valor ficará vazio
+
+App.tsx (para aula 5)
+
+
+  interface DateUser{
+    userName : string,
+    userRol : string
+  }
+
+  const [user, setUser] = useState<DateUser>({
+    userName : "visitante!",
+    userRol : ""
+  })
+
+  function handleLogin(){
+    setUser({
+      userName : "Carol",
+      userRol : "TI"
+    })
+  }
+  function handleLogout(){
+    setUser({
+      userName : "visitante!",
+      userRol : ""
+    })
+  }
+
+const App = ()=>{
+
+
+  //JSX é o que retornanmos para o HTML
+  return(
+    <div>
+              <h1>Olá {user?.userName}</h1>
+              <h2>{user?.userRol}</h2>
+        <button onClick={handleLogin}>Entrar</button>
+        <br /> <br />
+        <button onClick={handleLogout}>Sair</button>
+    </div>
+  )
+}
+export default App
