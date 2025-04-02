@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = ()=>{
  
@@ -13,6 +13,17 @@ const [ editTask, setEditTask] = useState({
   enabled : false,
   text : ''
 })
+
+//useEffect
+useEffect (()=> {
+    //Captura das tarefas com Local storage. Passa a chave
+    const tasks_local = localStorage.getItem("key")
+
+    if(tasks_local){
+      //Tarefas salvas em string e preciso retorna-las como um array
+      setTask(JSON.parse(tasks_local))   
+    }
+} , [] )
 
 const AddTask = () => {
   if(!newTask){
@@ -29,20 +40,22 @@ const AddTask = () => {
        setTask(savedTask => [...savedTask, newTask])
        //Limpa o campo após adicionada a tarefa
        setNewTask("")
+      //Uso do Lacal Storage. Passa a chave(que deve ser a mesma para outros localstorage), transforma array em string para ser lido, puxa a lista e a nova tarefa salva
+      localStorage.setItem("key" , JSON.stringify([...task, newTask]))
   }
 }
 //Função que vai verificar o item do botão que cliquei pra ver se é aquele mesmo
 const DelTask = (deletedTask : string) =>{
   const list_updated = task.filter( (task) => task !== deletedTask )
-  console.log("Tarefas restantes " , list_updated);
   //Remove a tarefa
   setTask(list_updated)
+  //Para saber o item deletado
+  localStorage.setItem("key", JSON.stringify(list_updated))
 }
 
 //Função para editar
 const EdiTask = (editedTask : string) =>{
-  console.log("Tarefa para editar: " , editedTask);
-  //Passar a tarefa escolida para ser editada no input
+  //Passar a tarefa escolhida para ser editada no input
   setNewTask(editedTask)
   setEditTask({
     enabled : true,
@@ -62,10 +75,15 @@ function savedEdit(){
     enabled : false,
     text : ''
   })
+
+  setNewTask("")
+  localStorage.setItem("key", JSON.stringify(list_updated))
+  //Para testar no console tem que ir em applications >> Local storage
 }
 
   return(
   <div>
+    
       <h1>Lista de tarefas</h1>
 
       <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} aria-label='Campo para tarefa' placeholder='Tarefa para lista' />

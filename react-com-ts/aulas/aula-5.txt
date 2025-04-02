@@ -1,0 +1,47 @@
+Aula 5
+
+31/03/25, e 01/04/25
+
+Arrays
+
+Passa uma lista em useState.
+map()-> Pecorre a lista
+() retorna algo para interface
+Passar a chave dentro da tag key{item_da_lista}
+
+//Lista
+const [task, setTask] = useState([
+  "Orar",
+  "Estudar inglês",
+  "Caminhar",
+  "Assistir vídeos da auto escola."
+])
+
+//Nova tarefa
+const [ newTask, setNewTask ] = useState("")
+
+//setTask([ newTask ]) Não adicona na lista, apenas coloca e as outras tarefas não são exibidas
+
+Para que o evento seja acionado no item especifico para apagar, tem que chamar uma função anõnima que receberá a função de deletar dentro de onClick no botão. onClick={ ()=> DelTask(iten) }
+
+  //Encontra o index(índice) da tarefa. Observação: para comparar a terafa correspondente ao index, passei editTask com a popriedade text
+  const indexTask = task.findIndex((task) => task === editTask.text)
+  const list_updated = [...task]
+  //Captura o index da tarefa para saber qual vai ser editada e salvada como uma nova tarefa na lista 
+  list_updated[indexTask] = newTask
+  setTask(list_updated)
+
+Precisa informar no useState qual é o tipo da lista como: <string[]>
+
+strictMode -> Auxilia no ambiente de desenvolvimento para que possamos visualizar o efeito das ações do incio e fim, e depois de novo.
+useEffect -> Acompanha o ciclo da aplicação recebe uma arrow function e []
+Dentro da função anônima se faz a ação e dentro dos colchetes estão as suas dependencias
+
+const [test, setTest] = useState(false)
+//useEffect
+useEffect (()=> {
+  console.log("Testando modelo...");
+  console.log("Botão clicado!");  
+} , [test] )
+
+<button onClick={ ()=> setTest(true) }>Teste</button>
