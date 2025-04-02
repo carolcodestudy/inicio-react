@@ -1,0 +1,25 @@
+Aula 6
+
+02/04/24
+
+Uso o useRef
+
+Importa na biblioteca do 'react' também
+
+Referencia um elemento do body, pode manipular o cursor no input ou outros elementos
+O tipo dele é referenciar o nome da tag em TS <>
+
+useMemo
+
+Evita renderização desnecessaria
+Salva aquatidade texto ou elementos.
+Contagem
+
+useCallback
+
+Renderização eficiente em função, fazer cash
+
+O script realoca as funções na memória a cada renderização, renderiza o body todo (Quando as funções são executadas)
+
+Rendereização condicional serve só para mostrar elementos com useState de acordo com a vontade da regra de negócio.
+Utiliza operação ternária

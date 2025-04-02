@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 
 const App = ()=>{
  
@@ -25,7 +25,26 @@ useEffect (()=> {
     }
 } , [] )
 
-const AddTask = () => {
+let checkRef = useRef(true);
+
+useEffect( ()=>{
+
+  //Isso evita que o primeiro useEffect seja chamado sem nada na lista
+  if(checkRef.current){
+    checkRef.current = false
+    return
+  }
+
+  localStorage.setItem("key", JSON.stringify(task))
+
+  //Sempre que a lista receber novas tarefas o script rodará esse trecho
+}, [task] )
+
+//useRef. Precisa saber a que elemento ele vai prestar a referência
+const inputRef = useRef<HTMLInputElement>(null)
+
+//Função de adicionar renderizada eficientemente, evita ser chamada (realocada na memória) toda hora
+const AddTask = useCallback( ()=>{
   if(!newTask){
     alert("Nenhuma tarefa adicionada!")
     return
@@ -40,17 +59,16 @@ const AddTask = () => {
        setTask(savedTask => [...savedTask, newTask])
        //Limpa o campo após adicionada a tarefa
        setNewTask("")
-      //Uso do Lacal Storage. Passa a chave(que deve ser a mesma para outros localstorage), transforma array em string para ser lido, puxa a lista e a nova tarefa salva
-      localStorage.setItem("key" , JSON.stringify([...task, newTask]))
   }
-}
+
+  //Caso o input receba mudança será executada ou se a lista receber mudança também será executada(função)
+}, [newTask, task])
+
 //Função que vai verificar o item do botão que cliquei pra ver se é aquele mesmo
 const DelTask = (deletedTask : string) =>{
   const list_updated = task.filter( (task) => task !== deletedTask )
   //Remove a tarefa
   setTask(list_updated)
-  //Para saber o item deletado
-  localStorage.setItem("key", JSON.stringify(list_updated))
 }
 
 //Função para editar
@@ -61,6 +79,9 @@ const EdiTask = (editedTask : string) =>{
     enabled : true,
     text : editedTask
   })
+
+    //Captura o cursor e põe dentro do input para editar. Verifica se o seu estado está vazio
+    inputRef.current?.focus()
 }
 function savedEdit(){
   //Encontra o index(índice) da tarefa. Observação: para comparar a terafa correspondente ao index, passei editTask com a popriedade text
@@ -77,20 +98,29 @@ function savedEdit(){
   })
 
   setNewTask("")
-  localStorage.setItem("key", JSON.stringify(list_updated))
-  //Para testar no console tem que ir em applications >> Local storage
 }
+
+//Evita a perca de performance. O useMemo renderiza esta ação sempre que a lista ganha ou perde tarefa
+
+const taskMemo = useMemo( ()=>{
+
+return task.length
+
+}, [task] )
 
   return(
   <div>
     
       <h1>Lista de tarefas</h1>
 
-      <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} aria-label='Campo para tarefa' placeholder='Tarefa para lista' />
+      <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} aria-label='Campo para tarefa' placeholder='Tarefa para lista' ref={inputRef} />
+
       <button onClick={AddTask} title="Botão de adicionar ou atualizar">
       {/*Valor ternário para o valor do botão*/ editTask.enabled ? "Atualizar" : "Adicionar" }</button>
       
       <hr />
+
+      <strong>Números de tarefas: {taskMemo}</strong>
 
       {task.map( (iten) =>(
         <section key={iten}><span>{iten} <button onClick={() => EdiTask(iten)} title='Botão de editar'>Editar</button>  <button onClick={ ()=> DelTask(iten) } title='Botão de deletar'>Excluir</button> </span></section>
