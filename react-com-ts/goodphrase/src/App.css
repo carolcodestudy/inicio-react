@@ -1,0 +1,35 @@
+@charset "UTF-08";
+
+*{ margin: 0; padding: 0; cursor: context-menu; font-family: sans-serif;}
+
+body{
+  width: 100vw; height: 100vh; background-color: #0a0a0af6;
+}
+
+.container{
+  border: 2px solid yellow; width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;
+}
+
+.logo{
+  width: 325px; 
+}
+
+.title-h2{
+  color: whitesmoke; letter-spacing: 2px; margin:20px 0px; font-weight: 100;
+}
+
+.category-section{
+  display: flex; justify-content: space-evenly; gap: 14px; margin: 15px 0px 30px 0px;
+}
+
+.category-section > .category-button{
+  padding: 5px; font-weight: 100; background-color: whitesmoke; border-radius: 4px; color: #a708ade7; letter-spacing: 1px; cursor: pointer;
+}
+
+.generate-button{
+  padding: 5px; font-weight: 600; background-color: #1FA4DB; border-color: transparent; border-radius: 4px; color: whitesmoke; letter-spacing: 1px; margin: 0px 0px 20px 0px; cursor: pointer;
+}
+
+span > .phrase-p{
+width: 420px; padding: 14px 22px; margin: 24px 0px 16px 0px; font-style: italic; color: #dd7b22; letter-spacing: 2px; text-align: center; line-height: 150%; background-color: #fafafa; border-radius: 4px;
+}

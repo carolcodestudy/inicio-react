@@ -1,0 +1,17 @@
+Aula 7
+
+05/04/2025
+
+Projeto gerador de frases
+
+gap em css serve para espaçar os botõs dentro de um elemento pai
+
+line-heigh -> Altura entre linhas
+
+Projeto está em goodphrase
+
+Se a variavel não estiver vazia mostra a frase
+  const [content , setContent] = useState("")
+{content !== '' && <p className="phrase-p">Frase motivacional</p>}
+
+Dá para por um estilo com condicional dentro da tag do elemento passando style { { propriedade ? true : false } }
