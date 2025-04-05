@@ -22,4 +22,54 @@ Renderização eficiente em função, fazer cash
 O script realoca as funções na memória a cada renderização, renderiza o body todo (Quando as funções são executadas)
 
 Rendereização condicional serve só para mostrar elementos com useState de acordo com a vontade da regra de negócio.
-Utiliza operação ternária
+Colocar os resultados da condiconal em (), caso mais de uma tag vá dentro então os envolva em uma div
+
+Utiliza operação ternária ? true : false e arfimação &&
+
+Sintaxe:
+{variavel ? ("h1 teste true") : ("h1 teste false")}
+Ou 
+{variavel && -> Para passar mais de uma tag utiliza (div e depois as tags)}
+
+A pasta usuario está explicando mais
+
+function App() {
+  const [nameLenght, setNameLenght ] = useState("Ana")
+  return (
+      <div>
+      <h1>Teste de usuário</h1>
+      {nameLenght.length <= 4 && <p>Nome muito bom</p>}
+      </div>
+  )
+}
+export default App
+Caso o nome seja maior não emite nada.
+
+Nesse verifica se o usuário está logado e eu consigo passar o botão logo no resultado da condicional
+
+const [flag, setFlag ] = useState(false)
+  return (
+    
+      <div>
+        
+      <h1>Teste de usuário</h1>
+
+      {flag ? (<div> <h2>Ana Carolina acessou o sistema.</h2> <button onClick={() => setFlag(false)}>Sair</button> </div>) : (<div> <h2>Ninguém acessou o sistema.</h2> <button onClick={() => setFlag(true)}>Entrar</button> </div>)}
+     
+      </div>
+  )
+
+Condicional com afirmação simples
+const [flag, setFlag ] = useState(false)
+
+  return (
+    
+      <div>
+
+      <h1>Teste de usuário</h1>
+      <button onClick={()=> setFlag(true)}>Clique</button>
+
+      {flag && (<p>O botão está com true</p>)}
+     
+      </div>
+  )
