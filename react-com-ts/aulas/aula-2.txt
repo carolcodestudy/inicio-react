@@ -37,7 +37,8 @@ Criar propridade opcional utiliza ?:
 exemplo dentro de interface: key?: tipo_de_valor
 Isso é para que o react não fique gerando erros qunado utilizamos props (O que entra na interface, aquilo que o ts deve saber que nós estamos esperando).
 Também pode deixar um valor padrão dentro da função exportada dentro do parâmetro. Para que o elemento não fique vazio.
-Exempo export function NomedaFuncao( { key = "Texto padrao"  : interface} ){
+Exemplo:
+ export function NomedaFuncao( { key = "Texto padrao"  : interface} ){
   return(
     <p>{key}</p>
   )

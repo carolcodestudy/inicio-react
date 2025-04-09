@@ -160,7 +160,6 @@ const App = ()=>{
       setCounter(counter - 1)
     }
 
-  //JSX é o que retornanmos para o HTML
   return(
     <div>
         <h1>Salvar o nome</h1>
@@ -180,7 +179,6 @@ const App = ()=>{
   )
 }
 export default App
-//Precisa colocar o input e o setInput, pois nada adiantará. O valor ficará vazio
 
 App.tsx (para aula 5)
 

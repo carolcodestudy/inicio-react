@@ -13,12 +13,12 @@ No caso ao usar isso tem que importar e por dentro da função exportada: const 
 
 O valor_incial quer acessar o que está dentro de useState("")
 
-Para chamar isso na função do evento, passa a variáveel normalmente. E também pode passar dentro dos componentes com chaves.
+Para chamar isso na função do evento, passa a variável normalmente. E também pode passar dentro dos componentes com chaves.
 
 Para fazer uma função em um input, nao precisa criar uma nova função para capturar o evento, coloca um parametro como:
 
 onChange = {(e) => valor_atualizado(e.target.value)}
-Tenta entender que o setInput seria como uma ação para salvar as alteerações e repassar ao valor_inicial. Como uma atualização.
+Tenta entender que o setInput seria como uma ação para salvar as alterações e repassar ao valor_inicial. Como uma atualização.
 
 Assim funciona, porém o editor não adicona as propriedades target e value:
 
@@ -43,4 +43,3 @@ const [counter , setCounter] = useState<number>(0)
     setCounter(val_init => val_init + 1)*/
   }
 Variavel onde armazena o número entre tags: {counter}
-
