@@ -12,7 +12,7 @@ O tipo dele é referenciar o nome da tag em TS <>
 useMemo
 
 Evita renderização desnecessaria
-Salva aquatidade texto ou elementos.
+Salva a quantidade do texto ou elementos.
 Contagem
 
 useCallback

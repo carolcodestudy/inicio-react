@@ -333,3 +333,31 @@ function savedEdit(){
   )
 }
 export default App
+
+
+DESAFIO
+  /*
+  
+  interface DateProps{
+    user_name : string
+    user_age :  number
+  }
+
+    const [dates , setDates] = useState<DateProps>()
+
+  O hook só pode ser chamado de forma mais elevada que outras funções no React, por isso já chamo o resultado antes de por quais serão esses resultados 
+  useEffect( ()=>{
+    console.log(Usário: , ${dates?.user_name},  Idade: ,  dates?.user_age);
+  } , [dates])
+             
+  Utilizei dentro da função Form que estava antes de return
+          /*Não estou precisando usar o setDates:
+                    setDates({
+            user_name : name,
+            user_age : age
+          })  
+
+          Quando uso a chave dates?.user_age fica alegando qque está indefinido
+ */
+      
+      /*HTML {dates && Object.keys(dates).length > 0 &&( <h2>Você tem {2025 - dates.user_age} anos de idade.</h2> )}*/
