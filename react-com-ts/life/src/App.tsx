@@ -46,31 +46,21 @@ const saveDay = (e :any) =>{
         }
         else if(result_day != 0 && actual_month <= birth_month && result_year > 0){
           let final_result : number = result_year - 1
-          
-          console.log("Você ainda não fez aniversário neste ano. Você está com: " , final_result , " anos.");
           setAge(final_result)
         }
         else if(result_day != 0 && actual_month >= birth_month && result_year > 0){
-          let final_result : number = result_year 
-          
-          console.log("Você já fez aniversário este ano. Você está com: " , final_result , " anos.");
-          setAge(final_result)
+          setAge(result_year)
         }
         else if(result_day != 0 && result_month == 0 && result_year > 0){
           let final_result : number = result_year - 1
-          console.log("Você vai fazer aniversário este mes. Você está com: " , final_result , " anos.");
           setAge(final_result)
         }
         else if(result_day == 0 && result_month != 0 && result_year > 0){
-          let final_result : number = result_year
-          console.log("Você já está com: " , final_result , " anos.");
           setAge(result_year)
         }
         else{
-          console.log("PARABÉNS VOCÊ ESTÁ FAZENDO ANIVERSÁRIO! " , result_year , " anos.");
           setAge(result_year)
-        } 
-        
+        }
       }
   } 
   
@@ -85,8 +75,9 @@ const saveDay = (e :any) =>{
           <input type="number" className="input" onChange={saveYear} placeholder='Ano que nasceu'required/>
         <button type='submit' onClick={() => setFlag(true)}>Enviar</button>
         </form>
-        {flag && ( <span><h2>Olá {name} você tem atualmente {age} anos!</h2></span> )}
+        
       </div>
+      {flag && ( <span><h2>{name} você tem atualmente {age} anos!</h2></span> )}
     </>
   )
 }
