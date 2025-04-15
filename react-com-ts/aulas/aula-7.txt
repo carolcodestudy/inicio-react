@@ -15,3 +15,7 @@ Se a variavel não estiver vazia mostra a frase
 {content !== '' && <p className="phrase-p">Frase motivacional</p>}
 
 Dá para por um estilo com condicional dentro da tag do elemento passando style { { propriedade ? true : false } }
+
+Desafio da idade
+
+O professor usou getUTCFullYear isso serve para capturar o ano de acordo com o horário universal, seria um getfullyear mais moderno. É compatível com o ano 2000

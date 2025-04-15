@@ -1,0 +1,51 @@
+Aula 8
+
+15/04/25
+
+React Router DOM
+
+Biblioteca utilizado para criar a rotas no react
+
+reactrouter.com/
+
+Vou criar uma pasta nova com vite chamada route
+
+Instalação:
+npx create-react-router@latest . (Deu erro pois sobre ewscreve alguns arquivos já baixados pelo vite)
+
+Comando diferente usado pelo prof. 
+npm install react-router-dom localforage match-sorter sort-by (Funcionou)
+
+Nomeclatura de pastas: src/ >> pages/ > home/
+Escreve a função exportad com o nome da pasta
+Ex.: Home()
+Não se coloca default quando exporta a função com o componente
+Nome padrão do aruivo: index.tsx
+
+Dentro de src cria o arquivo router.tsx que vai ser resposnável por importar a biblioteca instalada.
+Vai chamar createBrowserRouter e vai imporar os componentes criados, que são as páginas
+
+Dentro dessa propriedade vai passar um array de objetos. 
+A chave path remete ao caminho do diretório que será adicionado ao browser. 
+E a chave element irá receber o meu componente entre tag <Home/>
+
+depois preciso exportar esses objetos:
+export { objetos }
+
+Tela inicial para inicializar no App
+
+Tem que importar o RouterProvider da biblioteca baixada e passar dentro de return com o parametro router que vai receber os objetos criados em router.tsx importados
+
+Links: São importados e se utiliza <Link to = "caminho da pasta">Texto<Link/> dentro de return
+Chama os links no arquivo dos componentes
+Não pode importar os camponentes para passar no caminho, pois a chave element não serve para a propeiedade to do Link
+
+Crir rotas com paramentros
+
+Adicona dentro do caminho em element : "/pasta/:key". Se não passar nenhum paametro irá dar erro
+
+Chama a propriedade useParams dentro do componente que receberá um parametro de forma dinamica
+cria uma variável como um objeto: const { key } = useParams()
+A chave tem que ser a mesma em useParams e em element no arquivo router.tsx
+
+Criação de páginas inexistente. Deve passar * na chave path e sempre ser alocada na última do array de objetos

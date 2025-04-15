@@ -361,3 +361,23 @@ DESAFIO
  */
       
       /*HTML {dates && Object.keys(dates).length > 0 &&( <h2>Você tem {2025 - dates.user_age} anos de idade.</h2> )}*/
+
+Rotas
+
+import {createBrowserRouter} from 'react-route-dom'
+
+const exportRoutes = createBrowserRouter([
+    {
+        path : '/',
+        element : <Home/>
+    },
+    {
+        path : '/about',
+        element : <About/>
+    },
+    {
+        path : '*',
+        element : <NotFound/>
+    }
+])
+export {exportRoutes}

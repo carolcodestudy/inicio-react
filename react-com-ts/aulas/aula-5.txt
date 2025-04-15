@@ -22,7 +22,7 @@ const [ newTask, setNewTask ] = useState("")
 
 //setTask([ newTask ]) Não adicona na lista, apenas coloca e as outras tarefas não são exibidas
 
-Para que o evento seja acionado no item especifico para apagar, tem que chamar uma função anõnima que receberá a função de deletar dentro de onClick no botão. onClick={ ()=> DelTask(iten) }
+Para que o evento seja acionado no item especifico para apagar, tem que chamar uma função anonima que receberá a função de deletar dentro de onClick no botão onClick={ ()=> DelTask(iten) }
 
   //Encontra o index(índice) da tarefa. Observação: para comparar a terafa correspondente ao index, passei editTask com a popriedade text
   const indexTask = task.findIndex((task) => task === editTask.text)
@@ -34,7 +34,9 @@ Para que o evento seja acionado no item especifico para apagar, tem que chamar u
 Precisa informar no useState qual é o tipo da lista como: <string[]>
 
 strictMode -> Auxilia no ambiente de desenvolvimento para que possamos visualizar o efeito das ações do incio e fim, e depois de novo.
-useEffect -> Acompanha o ciclo da aplicação recebe uma arrow function e []
+
+useEffect -> Acompanha o ciclo da aplicação recebe uma arrow function e []. Cada vez que um elemento atualizar o seu valor, chamará a ação dentro do scopo do useEffect. O elemento deve ser passado como dependência.
+
 Dentro da função anônima se faz a ação e dentro dos colchetes estão as suas dependencias
 
 const [test, setTest] = useState(false)

@@ -1,0 +1,21 @@
+Aula 9
+
+15/04/25
+
+Layout do site
+Reproduzir o Header para mais de uma página.
+Tem que criar dentro de /component a pasta layout e criar o index.tsx
+
+Utilizará o react-router-dom que importará Outlet
+E no arquivo router.tsx deve remover os objetos do array(exportRoutes) e escrever:
+{
+    element : <Outlet/> (já importado),
+    children : [
+        {
+            path : '',
+            element : '/...'
+        }
+    ]
+}
+
+O Outlet seve para preservar as estruturas da página quando adicionarmos logo em cima dele em Layout, uma tag como header
