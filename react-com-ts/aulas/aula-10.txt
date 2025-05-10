@@ -1,0 +1,45 @@
+Aula 10
+
+Projeto das criptomoedas
+
+Pasta: cryptocurrency
+
+Instalação da biblioteca react-icons
+
+npm install react-icons
+
+Chama como 'react-icons/silaba do elemento'
+Exemplo está em src/page/home/index.tsx
+
+Uso attr() em content do css. Põe para referenciar o data-label do elemento.
+
+Para fazer a manipulação da rota preciso chamar useNavigate do react-dom para que o usuário use a rota
+
+Site da API: https://pro.coincap.io/dashboard
+
+Pega o endereço da imagem pela sua url e modifica o nome da imagem da logo antes do @
+
+Não estou conseguindo acessar a url da cryptomoeda escolhida,não há na documentação da api direito
+O problema foi resilvido, estava passando a estrutura da URl errada
+O certo é passar assim: 
+https://rest.coincap.io/v3/assets/${key}?apiKey=${my_key}
+O simbolo ? só serve para passar quando realizar uma busca pela query
+
+Não quis pegar na requisição com .then
+interface InfoProps{
+    data : CoinProps
+}
+
+interface ErrorProp{
+    error : string
+}
+
+type TypeProps = InfoProps | ErrorProp
+
+then((data : TypeProps) =>{
+            const info_datas = data.data
+            if("error" in data){
+            }
+            console.log("Resposta: " , info_datas);
+
+Só quis pegar qunado coloque data : CoinProps na segunda interface

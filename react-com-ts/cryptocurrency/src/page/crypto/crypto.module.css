@@ -1,0 +1,38 @@
+.span_info{
+    display: block;
+
+    & h1{
+        text-align: center; color: whitesmoke; opacity: 0.8;
+    }
+}
+
+.container{
+    padding: 0 14px; color: #FFF;
+
+    & h1, h2{
+        text-align: center; margin-bottom: 14px;
+    }
+
+    & img {
+        width: 60px; transition: all 1s;
+    }
+
+    & img:hover{
+        transform: rotate(360deg);
+    }
+
+    & .section{
+        background-color: #0f0f0f; margin: 24px auto; padding: 24px; display: flex; flex-direction: column; justify-content: center; max-width: 420px; border-radius: 4px; gap: 14px;
+
+        & .profit{
+            color: rgba(135, 244, 102, 0.863);
+        }
+    
+        & .loss{
+            color: rgba(177, 5, 5, 0.877);
+        }
+    }
+
+
+    
+}

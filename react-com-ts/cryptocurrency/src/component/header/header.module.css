@@ -1,0 +1,4 @@
+/*CSS de escopo. Só serve para o arquivo index.tsx da pasta header*/
+.container{
+    display: flex; align-items: center; justify-content: center; height: 120px; max-width: 1080px;
+}

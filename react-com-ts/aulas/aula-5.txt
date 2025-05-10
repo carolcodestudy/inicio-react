@@ -24,7 +24,7 @@ const [ newTask, setNewTask ] = useState("")
 
 Para que o evento seja acionado no item especifico para apagar, tem que chamar uma função anonima que receberá a função de deletar dentro de onClick no botão onClick={ ()=> DelTask(iten) }
 
-  //Encontra o index(índice) da tarefa. Observação: para comparar a terafa correspondente ao index, passei editTask com a popriedade text
+  //Encontra o index(índice) da tarefa. Observação: para comparar a terafa correspondente ao index, passei editTask com a propriedade text
   const indexTask = task.findIndex((task) => task === editTask.text)
   const list_updated = [...task]
   //Captura o index da tarefa para saber qual vai ser editada e salvada como uma nova tarefa na lista 

@@ -1,0 +1,106 @@
+.container{
+    margin: 0 14px;
+
+    & .form{
+        width: 100%; display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 30px;
+
+        & input{
+            width: 50%; height: 30px; border: 0; padding: 0 8px; border-radius: 4px; outline: 0; background-color: rgba(245, 245, 245, 0.961); cursor: context-menu;
+        }
+
+        & button{
+            background: transparent; color: rgba(255, 255, 255, 0.938);
+        }
+
+    }
+
+    & table{
+        border-collapse: separate; border-spacing: 0 14px; margin:  auto; padding: 0; width: 70%; table-layout: fixed; 
+
+        & tr > th{
+            color: rgba(245, 245, 245, 0.947); letter-spacing: 1px; font-size: 14px;
+        }
+
+        & .tr{
+            background-color: #1d1c20;
+        }
+
+        & th, td{
+            padding: 1.5em; text-align: center;
+        }
+
+        & .tr  > .td{
+                font-weight: bold; color: white;
+        }
+
+    }
+
+    thead > tr > th:first-child, tbody > tr > td:first-child{
+        border-radius: 4px 0 0 4px;
+    }
+
+    & .tdProfit{
+        color: rgba(135, 244, 102, 0.863);
+    }
+
+    & .tdLoss{
+        color: rgba(177, 5, 5, 0.877);
+    }
+
+    & button{
+        display: block; background-color: #30B8FF; color: rgba(255, 255, 255, 0.906); padding: 2px; border-radius: 3px;
+    }
+
+    & td > .div_coin{
+        display: flex; gap: 8; align-items: center;
+    }
+
+    & td > .div_coin > img{
+        width: 20px; transition: all 1s; margin-bottom: 4px; margin-right: 4px;
+    }
+
+    & td > .div_coin > img:hover{
+        transform: scale(1.5);
+        z-index: 99;
+    }
+}
+
+@media screen and (max-width:600px){
+     td > .div_coin > img{
+       margin-left: 14px;
+    }
+    td > .div_coin {
+        margin-bottom: 7px;
+    }
+    table {
+        border: 0;
+
+        & thead{
+            border: none; clip: react(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; position: absolute; width: 1px; padding: 0;
+        }
+
+        & .tr{
+            border-bottom: 1px solid rgba(225, 222, 222, 0.952); display: block; margin-bottom: 14px;
+        }
+
+        & .tr > td{
+            display: block; border-bottom: 1px solid rgba(221,221,221, 0.170); font-size: 2dvi; text-align: right; color: grey;
+        }
+
+        & td::before{
+            content: attr(data-label); float: left; font-weight: 2dvi; text-transform: uppercase;
+        }
+    }
+
+     tbody > tr > td:last-child{
+        border-bottom: 0;
+     }
+
+     thead > tr > th:first-child, tbody > tr > td:first-child{
+        border-radius: 0px;
+    }
+
+    thead > tr > th:last-child, tbody > tr > td:last-child{
+        border-radius: 0px;
+    }
+}

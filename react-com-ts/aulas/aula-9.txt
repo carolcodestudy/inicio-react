@@ -19,3 +19,4 @@ E no arquivo router.tsx deve remover os objetos do array(exportRoutes) e escreve
 }
 
 O Outlet seve para preservar as estruturas da página quando adicionarmos logo em cima dele em Layout, uma tag como header
+Quando quiser adicionar um footer, só por abaixo de Outlet

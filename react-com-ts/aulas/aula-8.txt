@@ -11,7 +11,7 @@ reactrouter.com/
 Vou criar uma pasta nova com vite chamada route
 
 Instalação:
-npx create-react-router@latest . (Deu erro pois sobre ewscreve alguns arquivos já baixados pelo vite)
+npx create-react-router@latest . (Deu erro pois sobre escreve alguns arquivos já baixados pelo vite)
 
 Comando diferente usado pelo prof. 
 npm install react-router-dom localforage match-sorter sort-by (Funcionou)
