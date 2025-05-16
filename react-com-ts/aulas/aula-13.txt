@@ -1,0 +1,11 @@
+Aula 13
+
+16/05/2025
+
+Deploy do projeto com Vercel
+
+Coloca o projeto no githyb
+
+roda o comando npm run build
+
+depois acessa vercel e procura pelo projeto comitado.

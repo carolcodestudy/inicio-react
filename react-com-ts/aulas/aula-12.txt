@@ -1,0 +1,53 @@
+Aula 12
+
+13/05/2025 - 16/05/2025
+
+Continuaçãao do projeto LinkTree
+
+Adionamento dos tipos das propriedades de input criado o componente.
+Precisa imporar InputHTMLAttributes do 'react'
+Cria uma interfacee vazia e põe antes das chaves extends InputHTMLAttributes<HTMLInputElement>
+E dentro da função do componente passa: (props : nome_da_interface) e quando chamar o props passa ele dentro da tag input {...props} para que possa ser adicionado as propriedas de forma personalizada em cada pág. que utilizar esse input.
+Ex.: diretório Professional
+
+//Emite no console
+console.log({
+    email : email,
+    pass : pass
+});
+
+Criação banco de dados fire base
+https://firebase.google.com/
+
+Acessa "go to console" quando logado
+Cria, coloca o authcation com email e senha.
+Depois cria o banco em firestore no modo teste
+Depois procura pelo desenvolvimento web na tela inicial e coloca o nome do app, que servirá como um arquivo de configuração do banco de dados.
+
+Instala na pasta raiz npm install firebase
+Depois cria uma pasta service em src e coloca o arquivo que o firebase dá para configurar o banco no projeto.
+Precisa importar algumas propriedades do firebase para chamar o auth e o banco.
+
+Proteção daa rota, para que somente o logado acesse a parte de admin
+diretório route em src
+
+const Controller = ( {children} : ControllProps : any ) =>{
+return children
+}
+Não precisei por o o any, pois configurei antes "verbatimModuleSyntax": false. Mas o prof colocou assim, pois o Controller não podia ficar sem o tipo definido.
+
+Criação do Header. O próprio sistema vai deslogar o usuário e vai lev-lo para o Home.
+
+Usa o seDoc para substituir os dados do documento já informado, enquanto o addDoc cria um novo documento e adiciona no banco os novos dados.
+
+Configuração do banco Firebase.
+Acessa Rules(Regras) lá onde se ve as coleções e remove o trecho
+allow read, write: if request.time < timestamp.date(2025, 6, 12);
+
+Adiciona:
+allow read : if true;
+allow write: if request.auth != null;
+
+Autoria somente leitura para qualquer pessoa e só permite alterar o dado se estiver logado
+
+Depois clica em publish.
