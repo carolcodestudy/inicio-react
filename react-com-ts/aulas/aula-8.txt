@@ -20,10 +20,10 @@ Nomeclatura de pastas: src/ >> pages/ > home/
 Escreve a função exportad com o nome da pasta
 Ex.: Home()
 Não se coloca default quando exporta a função com o componente
-Nome padrão do aruivo: index.tsx
+Nome padrão do arquivo: index.tsx
 
 Dentro de src cria o arquivo router.tsx que vai ser resposnável por importar a biblioteca instalada.
-Vai chamar createBrowserRouter e vai imporar os componentes criados, que são as páginas
+Vai chamar createBrowserRouter e vai importar os componentes criados, que são as páginas
 
 Dentro dessa propriedade vai passar um array de objetos. 
 A chave path remete ao caminho do diretório que será adicionado ao browser. 

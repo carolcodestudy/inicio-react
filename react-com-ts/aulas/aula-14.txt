@@ -1,0 +1,7 @@
+Aula 14
+
+26/05/2025
+
+contextApi
+
+Utilizado para que todo componente da aplicação utilize informações sobre o usuário, sem precisar pedir para o seu superior

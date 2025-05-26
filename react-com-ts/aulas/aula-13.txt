@@ -4,8 +4,27 @@ Aula 13
 
 Deploy do projeto com Vercel
 
-Coloca o projeto no githyb
+Coloca o projeto no github
 
 roda o comando npm run build
 
 depois acessa vercel e procura pelo projeto comitado.
+
+O terminal do git achava que estava logada como ancnr e não deixou eu fazerr os pushs
+Tive que acessar Painel de Controle >> Gerenciamento de credenciais e apagar lá o cache do site github.com para resolver e desloguei da conta ancnr no browser.
+
+Na autenticação em firebase precisa adicionar o dominio que o vercel gerará, adiciona em sttings
+
+Depois cria um arquivo no diretório professional chamado vercel.json e passa:
+{
+    "rewrites" : [
+        {
+            "source" : "/(.*)",
+            "destination" : "/"
+        }
+    ]
+}
+
+Por causa do react-router-dom
+
+Criei um diretório diferente, separado no github: projeto-dos-links
