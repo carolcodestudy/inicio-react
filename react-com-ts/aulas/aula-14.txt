@@ -5,3 +5,6 @@ Aula 14
 contextApi
 
 Utilizado para que todo componente da aplicação utilize informações sobre o usuário, sem precisar pedir para o seu superior
+
+Problema para atualizar repositório: Deslogar a outra conta com gh auth logout no terminal
+

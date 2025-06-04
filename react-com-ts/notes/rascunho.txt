@@ -381,3 +381,49 @@ const exportRoutes = createBrowserRouter([
     }
 ])
 export {exportRoutes}
+
+SEM CONTEXT API
+
+import { useState } from 'react'
+import { Student } from './component/Student'
+
+const App = ()=>{
+  const [name, setName] = useState("Gata do TI")
+return(
+  <div>
+    <h1>Pasta sem contextApi</h1>
+    <Student myName = {name} functionNickname = { (name : string) => setName(name) }/>
+  </div>
+  )
+}
+export default App
+
+interface NicknameProps{
+    nickname : string,
+    functionNickname : (name : string) => void;
+}
+
+export function Name({nickname, functionNickname} : NicknameProps){
+    return(
+        <div>
+            <h1><strong>{nickname}</strong></h1>
+            <button onClick={() => functionNickname("Novo apelido")}>Trocar apelido</button>
+        </div>
+    )
+}
+
+import { Name } from '../Name'
+
+interface NameProps{
+    myName : string,
+    functionNickname : (name : string) => void;//Função que retornará nada tipada. Precisa passar sempre o mesmo nome da função
+}
+
+export function Student( {myName, functionNickname} : NameProps ){
+   return(
+    <div>
+         <h1>Total de alunos: 12</h1>
+         <Name nickname = {myName} functionNickname = {functionNickname}/>
+    </div>
+   )
+}
