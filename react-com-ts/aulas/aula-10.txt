@@ -40,6 +40,6 @@ then((data : TypeProps) =>{
             const info_datas = data.data
             if("error" in data){
             }
-            console.log("Resposta: " , info_datas);
+            console.log("Resposta: " , info_datas);})
 
 Só quis pegar qunado coloque data : CoinProps na segunda interface

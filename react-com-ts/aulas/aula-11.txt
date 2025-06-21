@@ -8,18 +8,30 @@ Vai ter 4 pages e responsivo
 
 A rota vai ser criada diretamente em App.tsx
 Utilizei npx create-react-router@latest . para baixar o react-router que é um framework
-Sobreescreve o que o vite baixou. Não consegui entender como devo por as configurçõs do vite e tive que colocar allowImportingTsExtensions : true no ts.config.json onde tinha os pares de flag. Pois não estava lendo a extenseção do TS!
+Sobrescreve o que o vite baixou. Não consegui entender como devo por as configurçõs do vite e tive que colocar allowImportingTsExtensions : true no ts.config.json onde tinha os pares de flag. Pois não estava lendo a extenseção do TS!
 
 O prof vai usar tailwindcss para estilização
 
 tailwindcss.com/
 npm install tailwindcss @tailwindcss/vite
-Precisa configurar o vite.config.ts de acordo com a documentação desse template
-Adiciona:
+
+Coloca em vite.config.ts:
+import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+
+src/index.css:
+@import "tailwindcss";
+
+Precisa configurar o vite.config.ts de acordo com a documentação desse template
+
 tailwindcss() -> coloca em plugins
 Usar com HTML5 -> PostCSS
-Parece muito com Bootstrap, chama os atrributos pela classe dos elementos.
+Parece muito com Bootstrap, chama os atributos pela classe dos elementos.
 
 Responsividade -> tailwindcss utiliza código para s breakpoints ex.: md, sa eles determinam as configurações de acordo com o tamanho da tela
 

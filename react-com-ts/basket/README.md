@@ -52,3 +52,5 @@ export default tseslint.config({
   },
 })
 ```
+
+## O instrutor se baseou num desafio de vaga para ensinar a construir este projeto.

@@ -1,0 +1,36 @@
+Aula 15
+
+04/06/2025
+
+Criação do projeto de cesta
+
+Instala o react-router e o talwindcss
+
+basket/
+
+Media Query
+md:grid-cols-2 -> width >= 48rem mostra como os cards devem ficar de acordo com o tamanho da tela
+ lg:grid-cols-5 width >= 64rem mostra como os cards devem ficar de acordo com o tamanho da tela
+
+Foi necessário baixar o arquivo json dos dados dos produtos do githug do instutor
+Instalação do do documento json-serve para rodar a api " npm install -g json-server "
+Rodar a API: " json-server --watch db.json "
+Instalaçao do axios: " npm install axios "
+
+Criar um arquivo para requisição com axios, que funciona como o fetch, que seria usado em JS puro
+
+Instalação para emitir mensagem após salvar item na lista:
+npm install react-hot-toast
+url : https://react-hot-toast.com/
+
+E depois adicionar no main.tsx dentro do provider. <CartContext><Toaster/></CartContext> Tem que importar Toaster de react-hot-toast
+Chamar em home/ na função de adicionar o item: toaster.success("mensagem"):
+Exemplo:
+
+        toast.success("Item adicionado" , {
+            style :{
+                color : 'green',
+                backgroundColor : 'black'
+            },
+            duration : 500
+        })

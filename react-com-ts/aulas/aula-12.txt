@@ -51,3 +51,7 @@ allow write: if request.auth != null;
 Autoriza somente leitura para qualquer pessoa e só permite alterar o dado se estiver logado
 
 Depois clica em publish.
+
+Instalação do react-icons
+npm install react-icons
+Depois importa com 'react-icons/fi'. Conforme a rede social adiciona depois de '/' na importação.
