@@ -3,6 +3,7 @@ import { request } from '../../service'
 import { BsCartPlus } from 'react-icons/bs'
 import { CartContext } from '../../context'
 import { toast } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 export interface ProductsProps{
   id: number;
@@ -15,6 +16,8 @@ export interface ProductsProps{
 const Home = () => {
     const { toAdd } = useContext(CartContext)
     const [ product, setProduct ] = useState<ProductsProps[]>([])
+
+    const url = useNavigate();
 
     useEffect(()=>{
         //Renderizar a requisição
@@ -36,6 +39,10 @@ const Home = () => {
             toAdd(item)
     }
 
+    function toProduct(id : number){
+        url(`/product/${id}`)
+    }
+
     return(
         <main className="w-full max-w-7xl px-4 mx-auto cursor-context-menu">
             <h1 className="font-bold text-2xl mb-4 mt-10 text-center">Produtos em alta</h1>
@@ -43,7 +50,7 @@ const Home = () => {
 
             {product.map(( item )=>(
             <section key={item.id} className="w-full">
-                <img className="w-full rounded-lg max-h-70 mb-2" src={item.cover} alt={item.title} />
+                <img className="w-full rounded-lg max-h-70 mb-2" src={item.cover} onClick={ () => toProduct(item.id) } alt={item.title} />
                 <p className="font-medium mt-1 mb-2">{item.title}</p>
 
                 <div className="flex gap-3 items-center">
